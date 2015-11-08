@@ -147,7 +147,7 @@ public class FacebookWebView extends WebView {
         mWebSettings.setJavaScriptEnabled(DEFAULT_JS_ENABLED);
         mWebSettings.setPluginState(DEFAULT_PLUGIN_STATE);
         mWebSettings.setSupportZoom(DEFAULT_SUPPORT_ZOOM);
-        mWebSettings.setDisplayZoomControls(DEFAULT_SUPPORT_ZOOM);
+        mWebSettings.setDisplayZoomControls(false);
         mWebSettings.setBuiltInZoomControls(DEFAULT_SUPPORT_ZOOM);
         mWebSettings.setSaveFormData(DEFAULT_SAVE_FORM_DATA);
         mWebSettings.setSavePassword(DEFAULT_SAVE_PASSWORD);

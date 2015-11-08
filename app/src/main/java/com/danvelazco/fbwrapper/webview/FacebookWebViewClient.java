@@ -23,6 +23,7 @@ import android.view.KeyEvent;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
 import com.danvelazco.fbwrapper.util.Logger;
 
 /**
@@ -80,6 +81,19 @@ public class FacebookWebViewClient extends WebViewClient {
     @Override
     public WebResourceResponse shouldInterceptRequest (final WebView view, String url) {
         // We are currently not intercepting any resources
+
+        if ((url.startsWith("data:"))
+                || (!url.contains("arstechnica"))
+                ){
+            Uri uri = Uri.parse(url);
+//  here is the blocking logging EXTERNAL
+            Logger.d(getClass().getSimpleName(), "External URL Blocking " + url);
+            return new WebResourceResponse("text/plain", "utf-8",
+                    new ByteArrayInputStream(("[URL blocked \n" + uri.getHost() + "]").getBytes()));
+
+
+        }
+
         return super.shouldInterceptRequest(view, url);
     }
 
@@ -120,7 +134,7 @@ public class FacebookWebViewClient extends WebViewClient {
         if (domain != null) {
             // Let this WebView open the URL
             // TODO: Check the proper domain names that facebook uses or find another way
-            if (domain.contains("facebook") || domain.contains("fb")) {
+            if (domain.contains("arstechnica.com") || domain.contains("fb")) {
                 Logger.d(getClass().getSimpleName(), "This URL should be loaded internally. Let it load.");
                 view.loadUrl(url);
                 return false;

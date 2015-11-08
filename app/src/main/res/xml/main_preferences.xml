@@ -30,7 +30,7 @@
             android:title="@string/prefs_open_links_inside" />
 
         <CheckBoxPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="prefs_block_images"
             android:summary="@string/prefs_block_images_sry"
             android:title="@string/prefs_block_images" />
