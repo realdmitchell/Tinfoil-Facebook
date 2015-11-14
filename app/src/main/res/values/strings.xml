@@ -17,8 +17,8 @@
 <resources>
 
     <!-- App name -->
-    <string name="app_name">Tinfoil for Facebook</string>
-    <string name="app_name_short">Tinfoil</string>
+    <string name="app_name">Arstechnica Tin</string>
+    <string name="app_name_short">Ars</string>
 
     <!-- Labels -->
     <string name="lbl_dialog_alert">Alert</string>
@@ -37,7 +37,8 @@
     <!-- Context menu items -->
     <string name="menu_desktop">Desktop</string>
     <string name="menu_mobile">Mobile</string>
-    <string name="menu_jump_top">Jump to top</string>
+    <string name="menu_jump_1">Ars Technica</string>
+    <string name="menu_jump_2">Ebay</string>
     <string name="menu_news_feed">News feed</string>
     <string name="menu_share">Share</string>
     <string name="menu_copy_url">Copy URL</string>

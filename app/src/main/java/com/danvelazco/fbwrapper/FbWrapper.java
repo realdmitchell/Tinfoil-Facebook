@@ -154,7 +154,8 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
 
         // Set this listener to all the buttons
         findViewById(R.id.menu_drawer_right).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_item_jump_to_top).setOnClickListener(buttonsListener);
+        findViewById(R.id.menu_item_jump_1).setOnClickListener(buttonsListener);
+        findViewById(R.id.menu_item_jump_2).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_refresh).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_newsfeed).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_items_notifications).setOnClickListener(buttonsListener);
@@ -357,8 +358,12 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.menu_item_jump_to_top:
-                    jumpToTop();
+                case R.id.menu_item_jump_1:
+//                    jumpToTop();
+                    loadNewPage(INIT_URL_MOBILE);
+                    break;
+                case R.id.menu_item_jump_2:
+                    loadNewPage(INIT_URL_MOBILE_2);
                     break;
                 case R.id.menu_item_refresh:
                     refreshCurrentPage();

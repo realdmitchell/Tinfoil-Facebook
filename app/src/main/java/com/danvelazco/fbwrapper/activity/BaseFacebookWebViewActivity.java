@@ -82,6 +82,7 @@ public abstract class BaseFacebookWebViewActivity extends Activity implements
     protected static final String KEY_SAVE_STATE_TIME = "_instance_save_state_time";
     private static final int ID_CONTEXT_MENU_SAVE_IMAGE = 2981279;
     protected final static String INIT_URL_MOBILE = "http://arstechnica.com";
+    protected final static String INIT_URL_MOBILE_2 = "http://ebay.de";
     protected final static String INIT_URL_DESKTOP = "http://arstechnica.com";
     protected final static String INIT_URL_FACEBOOK_ZERO = "http://arstechnica.com";
     protected final static String INIT_URL_FACEBOOK_ONION = "https://facebookcorewwwi.onion";
