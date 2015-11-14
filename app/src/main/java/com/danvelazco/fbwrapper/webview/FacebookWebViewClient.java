@@ -82,7 +82,8 @@ public class FacebookWebViewClient extends WebViewClient {
     public WebResourceResponse shouldInterceptRequest (final WebView view, String url) {
         // We are currently not intercepting any resources
 
-          if ((url.startsWith("data:"))
+//        if ((url.startsWith("data:"))
+        if ((!url.contains("ars"))
                 || (!url.contains("arstechnica"))
                 ){
             Uri uri = Uri.parse(url);
