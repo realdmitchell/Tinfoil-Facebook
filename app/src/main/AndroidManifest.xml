@@ -15,7 +15,7 @@
     limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.danvelazco.fbwrapper">
+          package="com.realdm.fbwrapper">
     <!-- versionCode and versionName will be populated by build.gradle -->
 
     <uses-permission
@@ -43,7 +43,7 @@
         android:theme="@style/Theme.Tinfoil">
 
         <activity
-            android:name="com.danvelazco.fbwrapper.FbWrapper"
+            android:name="com.realdm.fbwrapper.FbWrapper"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="standard"
             android:windowSoftInputMode="adjustResize"
@@ -60,73 +60,6 @@
                 <data android:mimeType="text/plain"/>
             </intent-filter>
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-
-                <data
-                    android:host="m.facebook.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="m.facebook.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="m.fb.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="m.fb.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="touch.facebook.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="touch.facebook.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="touch.fb.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="touch.fb.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="facebook.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="facebook.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="fb.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="fb.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="www.facebook.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="www.facebook.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="www.fb.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="www.fb.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="apps.facebook.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="apps.facebook.com"
-                    android:scheme="https"/>
-                <data
-                    android:host="apps.fb.com"
-                    android:scheme="http"/>
-                <data
-                    android:host="apps.fb.com"
-                    android:scheme="https"/>
-            </intent-filter>
 
         </activity>
 
@@ -134,10 +67,10 @@
             android:name=".preferences.FacebookPreferences"
             android:label="@string/app_name"
             android:theme="@style/Theme.Tinfoil.Preferences"
-            android:parentActivityName="com.danvelazco.fbwrapper.FbWrapper">
+            android:parentActivityName="com.realdm.fbwrapper.FbWrapper">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.danvelazco.fbwrapper.FbWrapper" />
+                android:value="com.realdm.fbwrapper.FbWrapper" />
         </activity>
 
     </application>

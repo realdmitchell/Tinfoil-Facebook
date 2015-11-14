@@ -17,8 +17,8 @@
 <resources>
 
     <!-- App name -->
-    <string name="app_name">Ars Login</string>
-    <string name="app_name_short">Ars Login</string>
+    <string name="app_name">Logins</string>
+    <string name="app_name_short">Login</string>
 
     <!-- Labels -->
     <string name="lbl_dialog_alert">Alert</string>
@@ -110,7 +110,7 @@
     <!-- Text used on the "about" dialog -->
     <string name="txt_about">\nDeveloped by Daniel Velazco.
 \nvelazcod@gmail.com
-\nhttp://www.danvelazco.com\n
+\nhttp://www.realdm.com\n
 \n
 \nSource code:
 \nhttps://github.com/velazcod/Tinfoil-Facebook\n
