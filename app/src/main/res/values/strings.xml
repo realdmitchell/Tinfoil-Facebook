@@ -17,8 +17,8 @@
 <resources>
 
     <!-- App name -->
-    <string name="app_name">Arstechnica Tin</string>
-    <string name="app_name_short">Ars</string>
+    <string name="app_name">Ars Login</string>
+    <string name="app_name_short">Ars Login</string>
 
     <!-- Labels -->
     <string name="lbl_dialog_alert">Alert</string>
@@ -39,6 +39,9 @@
     <string name="menu_mobile">Mobile</string>
     <string name="menu_jump_1">Ars Technica</string>
     <string name="menu_jump_2">Ebay</string>
+    <string name="menu_jump_3">Golem</string>
+    <string name="menu_jump_4">BBC</string>
+    <string name="menu_jump_5">XDA</string>
     <string name="menu_news_feed">News feed</string>
     <string name="menu_share">Share</string>
     <string name="menu_copy_url">Copy URL</string>
@@ -47,7 +50,7 @@
     <string name="menu_messages">Messages</string>
     <string name="menu_preferences">Preferences</string>
     <string name="menu_about">About</string>
-    <string name="menu_exit">Kill</string>
+    <string name="menu_exit">Close</string>
 
     <!-- Preferences -->
     <string name="pref_cat_access">Facebook access</string>
@@ -114,5 +117,6 @@
 \n
 \nThis app is for those users that require a Tinfoil Hat when logging in to Facebook. It creates a sandbox for facebook\'s mobile site. Requires INTERNET permissions, and if you are skeptic about it, feel free to check the source code listed above. Coarse location permissions are required but location is not used unless you turn \"Allow Check-ins\" in the preferences.\n
 \n</string>
+
 
 </resources>

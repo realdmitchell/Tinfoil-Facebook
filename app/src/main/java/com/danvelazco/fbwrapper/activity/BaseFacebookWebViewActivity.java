@@ -49,6 +49,7 @@ import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import com.danvelazco.fbwrapper.R;
 import com.danvelazco.fbwrapper.util.Logger;
 import com.danvelazco.fbwrapper.util.OrbotHelper;
@@ -82,7 +83,10 @@ public abstract class BaseFacebookWebViewActivity extends Activity implements
     protected static final String KEY_SAVE_STATE_TIME = "_instance_save_state_time";
     private static final int ID_CONTEXT_MENU_SAVE_IMAGE = 2981279;
     protected final static String INIT_URL_MOBILE = "http://arstechnica.com";
-    protected final static String INIT_URL_MOBILE_2 = "http://ebay.de";
+    protected final static String INIT_URL_MOBILE_2 = "http://ebay-kleinanzeigen.de";
+    protected final static String INIT_URL_MOBILE_3 = "http://golem.de";
+    protected final static String INIT_URL_MOBILE_4 = "http://bbc.co.uk";
+    protected final static String INIT_URL_MOBILE_5 = "http://xda-developers.com";
     protected final static String INIT_URL_DESKTOP = "http://arstechnica.com";
     protected final static String INIT_URL_FACEBOOK_ZERO = "http://arstechnica.com";
     protected final static String INIT_URL_FACEBOOK_ONION = "https://facebookcorewwwi.onion";
@@ -115,7 +119,6 @@ public abstract class BaseFacebookWebViewActivity extends Activity implements
     protected ValueCallback<Uri[]> mUploadMessageLollipop = null;
     private boolean mCreatingActivity = true;
     private String mPendingImageUrlToSave = null;
-
     /**
      * BroadcastReceiver to handle ConnectivityManager.CONNECTIVITY_ACTION intent action.
      */
@@ -721,5 +724,7 @@ public abstract class BaseFacebookWebViewActivity extends Activity implements
             }
         }
     }
+
+
 
 }

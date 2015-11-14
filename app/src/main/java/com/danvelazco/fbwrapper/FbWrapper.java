@@ -15,6 +15,7 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.app.Activity;
 import com.danvelazco.fbwrapper.activity.BaseFacebookWebViewActivity;
 import com.danvelazco.fbwrapper.preferences.FacebookPreferences;
 import com.danvelazco.fbwrapper.util.Logger;
@@ -24,6 +25,7 @@ import com.danvelazco.fbwrapper.util.OrbotHelper;
  * Facebook web wrapper activity.
  */
 public class FbWrapper extends BaseFacebookWebViewActivity {
+    Activity activity;
 
     // Constant
     private final static String LOG_TAG = "FbWrapper";
@@ -156,13 +158,12 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         findViewById(R.id.menu_drawer_right).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_jump_1).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_jump_2).setOnClickListener(buttonsListener);
+        findViewById(R.id.menu_item_jump_3).setOnClickListener(buttonsListener);
+        findViewById(R.id.menu_item_jump_4).setOnClickListener(buttonsListener);
+        findViewById(R.id.menu_item_jump_5).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_item_refresh).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_item_newsfeed).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_items_notifications).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_item_messages).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_share_this).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_preferences).setOnClickListener(buttonsListener);
-        findViewById(R.id.menu_about).setOnClickListener(buttonsListener);
         findViewById(R.id.menu_kill).setOnClickListener(buttonsListener);
     }
 
@@ -359,32 +360,28 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.menu_item_jump_1:
-//                    jumpToTop();
                     loadNewPage(INIT_URL_MOBILE);
                     break;
                 case R.id.menu_item_jump_2:
                     loadNewPage(INIT_URL_MOBILE_2);
                     break;
+                case R.id.menu_item_jump_3:
+                    loadNewPage(INIT_URL_MOBILE_3);
+                    break;
+                case R.id.menu_item_jump_4:
+                    loadNewPage(INIT_URL_MOBILE_4);
+                    break;
+                case R.id.menu_item_jump_5:
+                    loadNewPage(INIT_URL_MOBILE_5);
+                    break;
                 case R.id.menu_item_refresh:
                     refreshCurrentPage();
-                    break;
-                case R.id.menu_item_newsfeed:
-                    loadNewPage(mDomainToUse);
-                    break;
-                case R.id.menu_items_notifications:
-                    loadNewPage(mDomainToUse + URL_PAGE_NOTIFICATIONS);
-                    break;
-                case R.id.menu_item_messages:
-                    loadNewPage(mDomainToUse + URL_PAGE_MESSAGES);
                     break;
                 case R.id.menu_share_this:
                     shareCurrentPage();
                     break;
                 case R.id.menu_preferences:
                     startActivity(new Intent(FbWrapper.this, FacebookPreferences.class));
-                    break;
-                case R.id.menu_about:
-                    showAboutAlert();
                     break;
                 case R.id.menu_kill:
                     mWebViewContainer.removeView(mWebView);
@@ -433,5 +430,6 @@ public class FbWrapper extends BaseFacebookWebViewActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
 
 }

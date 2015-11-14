@@ -83,16 +83,22 @@ public class FacebookWebViewClient extends WebViewClient {
         // We are currently not intercepting any resources
 
 //        if ((url.startsWith("data:"))
-        if ((!url.contains("ars"))
-                || (!url.contains("arstechnica"))
+        if ((url.contains("ars"))
+                || (url.contains("arstechnica"))
+                || (url.contains("ebay"))
+                || (url.contains("golem"))
+                || (url.contains("bbc"))
+                || (url.contains("xda"))
                 ){
+            return super.shouldInterceptRequest(view, url);
+        }else
+        {
             Uri uri = Uri.parse(url);
             Logger.d(getClass().getSimpleName(), "External URL Blocking " + url);
             return new WebResourceResponse("text/plain", "utf-8",
                     new ByteArrayInputStream(("[URL blocked \n" + uri.getHost() + "]").getBytes()));
         }
 
-        return super.shouldInterceptRequest(view, url);
     }
 
     /**
@@ -111,11 +117,6 @@ public class FacebookWebViewClient extends WebViewClient {
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
         Logger.d(getClass().getSimpleName(), "shouldOverrideUrlLoading? " + url);
 
-        // Do not override any type of loading if we can load any URL
-        if (mAllowAnyUrl) {
-            Logger.d(getClass().getSimpleName(), "The user is allowing us to open any URL in this WebView, let it load.");
-            return false;
-        }
 
         // Avoid NPEs when clicking on weird blank links
         if (url.equals("about:blank")) {
@@ -123,28 +124,8 @@ public class FacebookWebViewClient extends WebViewClient {
             return false;
         }
 
-        // Get the URL's domain name
-        String domain = Uri.parse(url).getHost();
 
-        Logger.d(getClass().getSimpleName(), "Checking URL: " + url);
-        Logger.d(getClass().getSimpleName(), "\tDomain: " + domain);
-
-        if (domain != null) {
-            // Let this WebView open the URL
-            // TODO: Check the proper domain names that facebook uses or find another way
-            if (domain.contains("arstechnica.com") || domain.contains("ebay")) {
-                Logger.d(getClass().getSimpleName(), "This URL should be loaded internally. Let it load.");
-                view.loadUrl(url);
-                return false;
-            }
-        }
-
-        // Otherwise, fire the listener to open the URL by
-        // any app that can handle it
-        Logger.d(getClass().getSimpleName(), "This URL should be loaded by a 3rd party. Override.");
-        fireOpenExternalSiteListener(url);
-
-        return true;
+        return false;
     }
 
     /**
